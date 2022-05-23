@@ -1,10 +1,19 @@
-# make-package-json
-Create a package.json
+# npm-init-ex
 
-Features
+npm init extended - a better `npm init`
 
- - Sets version to `0.0.0`
- - Sets license to `MIT`
- - Adds a `files` field
- - Sorts the fields
- 
+```sh
+npx npm-init-ex
+```
+
+## Features
+
+Runs `npm init -y` and then modifies the `package.json`:
+
+- Sets version to `0.0.0` (Better for `np`)
+- Sets license to `MIT`
+- Adds a `main`, `bin` and `files` fields (Assumes a `dist` folder)
+- Sets `node` in `engines` to `>16`
+- Sorts the fields
+
+Also creates an `.npmrc` files with `save-exact=true`

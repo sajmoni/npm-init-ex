@@ -1,0 +1,28 @@
+{
+  "name": "make-package-json",
+  "version": "0.0.0",
+  "description": "Create a package.json",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sajmoni/make-package-json.git"
+  },
+  "author": "sajmoni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sajmoni/make-package-json/issues"
+  },
+  "homepage": "https://github.com/sajmoni/make-package-json#readme",
+  "engines": {
+    "node": ">16"
+  },
+  "dependencies": {
+    "execa": "6.1.0",
+    "read-pkg": "7.1.0",
+    "write-pkg": "5.1.0"
+  }
+}

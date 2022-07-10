@@ -15,5 +15,6 @@ Runs `npm init -y` and then modifies the `package.json`:
 - Adds a `main`, `bin` and `files` fields (Assumes a `dist` folder)
 - Sets `node` in `engines` to `>16`
 - Sorts the fields
+- Adds "sourceType: module"
 
 Also creates an `.npmrc` files with `save-exact=true`

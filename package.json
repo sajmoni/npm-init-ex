@@ -23,6 +23,7 @@
   "dependencies": {
     "execa": "6.1.0",
     "read-pkg": "7.1.0",
+    "sort-package-json": "1.57.0",
     "write-pkg": "5.1.0"
   }
 }

@@ -12,6 +12,7 @@ const run = async () => {
     files: ["dist/"],
     main: "dist/index.js",
     bin: "dist/index.js",
+    type: "module",
     engines: {
       node: ">16",
     },

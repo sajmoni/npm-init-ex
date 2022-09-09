@@ -8,13 +8,15 @@ npx npm-init-ex@latest
 
 ## :sparkles: Features
 
-Runs `npm init -y` and then modifies the `package.json`:
+1. Runs `npm init -y`
+
+2. Modifies the `package.json`
 
 - Sets version to `0.0.0` (Better for [`np`](https://github.com/sindresorhus/np))
 - Sets license to `MIT`
 - Adds `main`, `bin` and `files` fields (Assumes a `dist` folder)
 - Sets `node` in `engines` to `>16`
-- Sorts the fields
 - Adds `type: "module"`
+- Sorts the fields
 
-Also creates an `.npmrc` file with `save-exact=true`
+3. Creates `.npmrc` with `save-exact=true`

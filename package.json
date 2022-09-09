@@ -2,6 +2,7 @@
   "name": "npm-init-ex",
   "version": "0.0.0",
   "description": "Create a package.json",
+  "keywords": [],
   "homepage": "https://github.com/sajmoni/make-package-json#readme",
   "bugs": {
     "url": "https://github.com/sajmoni/make-package-json/issues"
@@ -13,37 +14,25 @@
   "license": "MIT",
   "author": "sajmoni",
   "type": "module",
-  "bin": {
-    "npm-init-ex": "src/index.js"
-  },
+  "main": "src/index.js",
+  "bin": "src/index.js",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "start": "node src/index.js",
-    "test": "preview && vitest"
-  },
-  "ava": {
-    "extensions": [
-      "ts"
-    ],
-    "require": [
-      "esbuild-runner/register"
-    ]
+    "test": "preview && vitest --no-threads"
   },
   "dependencies": {
-    "ava": "4.1.0",
-    "esbuild-runner": "2.2.1",
     "execa": "6.1.0",
     "read-pkg": "7.1.0",
     "sort-package-json": "1.57.0",
     "write-pkg": "5.1.0"
   },
   "devDependencies": {
-    "fs-fixture": "^1.1.0",
-    "package-preview": "^4.0.0",
-    "vitest": "^0.23.1"
+    "package-preview": "4.0.0",
+    "vitest": "0.23.1"
   },
   "engines": {
     "node": ">16"
-  },
-  "main": "index.js",
-  "keywords": []
+  }
 }

@@ -1,23 +1,30 @@
-import { test } from "vitest";
+import path from "node:path";
+import { readFile } from "node:fs/promises";
+import { expect, test } from "vitest";
 import { execa } from "execa";
-import fs from "node:fs";
-import { createFixture } from "fs-fixture";
+import { temporaryDirectory } from "tempy";
+import { readPackage } from "read-pkg";
 
-test("1", async () => {
-  const mockPackageJson = {
-    name: "hello",
-    version: "1.0.0",
-  };
-  const fixture = await createFixture({
-    // Directory path syntax - Same as above
-    testDirectory: "fileContent",
+test("npm-init-ex", async () => {
+  const directory = temporaryDirectory({ prefix: "hello-world" });
+  await execa("npm-init-ex", [directory], { cwd: directory });
+  const packageJson = await readPackage({
+    cwd: directory,
+    normalize: false,
   });
+  const npmrc = await readFile(path.join(directory, ".npmrc"));
+  expect(npmrc.toString()).toEqual("save-exact=true");
 
-  console.log(fixture.path);
-  await fixture.writeJson("./foo", mockPackageJson);
-  const foo = await fixture.readFile("./foo");
-  execa("npm-init-ex", [fixture.path]);
-  console.log("file: test.ts ~ line 18 ~ test ~ foo", foo.toString());
+  // Since the directory name will be different each time, we only assert the prefix part
+  expect(packageJson.name?.includes("hello-world")).toBeTruthy();
 
-  await fixture.rm();
+  expect(packageJson.version).toEqual("0.0.0");
+  expect(packageJson.license).toEqual("MIT");
+  expect(packageJson.files).toEqual(["dist/"]);
+  expect(packageJson.main).toEqual("dist/index.js");
+  expect(packageJson.bin).toEqual("dist/index.js");
+  expect(packageJson.type).toEqual("module");
+  expect(packageJson.engines).toEqual({
+    node: ">16",
+  });
 });

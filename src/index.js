@@ -5,15 +5,16 @@ import { execa } from "execa";
 import { readPackage } from "read-pkg";
 import { writePackage } from "write-pkg";
 import sortPackageJson from "sort-package-json";
-import process from "process";
+import { writeFile } from "node:fs/promises";
 
 const run = async () => {
-  const packageLocation = process.argv[2];
+  console.log("=== npm-init-ex ===");
   await execa("npm", ["init", "-y"]);
+
   const packageJson = await readPackage({
     normalize: false,
-    cwd: packageLocation || undefined,
   });
+
   const updatedPackageJson = sortPackageJson({
     ...packageJson,
     version: "0.0.0",
@@ -26,7 +27,10 @@ const run = async () => {
       node: ">16",
     },
   });
-  writePackage(updatedPackageJson);
+
+  await writePackage(updatedPackageJson);
+  await writeFile(".npmrc", "save-exact=true");
+  console.log("=== Done ===");
 };
 
 run();

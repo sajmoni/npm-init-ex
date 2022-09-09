@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "test": "preview && vitest",
-    "release": "np"
+    "release": "np --no-tests"
   },
   "dependencies": {
     "execa": "6.1.0",

@@ -1,6 +1,6 @@
 {
   "name": "npm-init-ex",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Create a package.json",
   "keywords": [],
   "homepage": "https://github.com/sajmoni/make-package-json#readme",

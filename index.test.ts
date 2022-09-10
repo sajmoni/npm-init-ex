@@ -7,7 +7,7 @@ import { readPackage } from "read-pkg";
 
 test("npm-init-ex", async () => {
   const directory = temporaryDirectory({ prefix: "hello-world" });
-  await execa("npm-init-ex", [directory], { cwd: directory });
+  await execa("npm-init-ex", [], { cwd: directory });
   const packageJson = await readPackage({
     cwd: directory,
     normalize: false,

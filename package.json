@@ -1,6 +1,6 @@
 {
   "name": "npm-init-ex",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "npm init extended - a better `npm init`",
   "keywords": [],
   "homepage": "https://github.com/sajmoni/make-package-json#readme",

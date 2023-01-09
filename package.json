@@ -19,10 +19,12 @@
     "src/"
   ],
   "scripts": {
-    "test": "preview && vitest",
+    "go": "preview && npm test",
+    "test": "vitest",
     "release": "np --no-tests"
   },
   "dependencies": {
+    "chalk": "5.2.0",
     "execa": "6.1.0",
     "read-pkg": "7.1.0",
     "sort-package-json": "1.57.0",

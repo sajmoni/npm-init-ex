@@ -7,7 +7,10 @@ import { readPackage } from "read-pkg";
 
 test("npm-init-ex", async () => {
   const directory = temporaryDirectory({ prefix: "hello-world" });
-  await execa("npm-init-ex", [], { cwd: directory });
+  const { stdout } = await execa("npm-init-ex", [], {
+    cwd: directory,
+  });
+
   const packageJson = await readPackage({
     cwd: directory,
     normalize: false,
@@ -27,4 +30,6 @@ test("npm-init-ex", async () => {
   expect(packageJson.engines).toEqual({
     node: ">16",
   });
+
+  expect(stdout).toMatchSnapshot();
 });

@@ -27,14 +27,14 @@
     "chalk": "5.2.0",
     "execa": "6.1.0",
     "read-pkg": "7.1.0",
-    "sort-package-json": "2.1.0",
+    "sort-package-json": "2.2.0",
     "write-pkg": "5.1.0"
   },
   "devDependencies": {
     "np": "7.6.3",
     "package-preview": "4.0.0",
     "tempy": "3.0.0",
-    "vitest": "0.27.0"
+    "vitest": "0.28.1"
   },
   "engines": {
     "node": ">16"

@@ -1,13 +1,14 @@
 // Vitest Snapshot v1
 
 exports[`npm-init-ex 1`] = `
-" npm-init-ex
+"
+[34m[1m npm-init-ex[22m[39m
 
- package.json created
- - Version: 0.0.0
- - License: MIT
- - Engine: >16
- - Dist folder: dist/
+ [36mpackage.json[39m created
+   [2mVersion:[22m [1m0.0.0[22m
+   [2mLicense:[22m [1mMIT[22m
+   [2mEngine:[22m [1m>18[22m
+   [2mDist folder:[22m [1mdist/[22m
 
-.npmrc created"
+ [36m.npmrc[39m created"
 `;

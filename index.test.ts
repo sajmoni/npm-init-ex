@@ -9,6 +9,10 @@ test("npm-init-ex", async () => {
   const directory = temporaryDirectory({ prefix: "hello-world" });
   const { stdout } = await execa("npm-init-ex", [], {
     cwd: directory,
+    env: {
+      // @ts-expect-error
+      FORCE_COLOR: 2,
+    },
   });
 
   const packageJson = await readPackage({
@@ -31,5 +35,6 @@ test("npm-init-ex", async () => {
     node: ">18",
   });
 
+  console.log("stdout", stdout);
   expect(stdout).toMatchSnapshot();
 });

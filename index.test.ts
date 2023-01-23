@@ -28,7 +28,7 @@ test("npm-init-ex", async () => {
   expect(packageJson.bin).toEqual("dist/index.js");
   expect(packageJson.type).toEqual("module");
   expect(packageJson.engines).toEqual({
-    node: ">16",
+    node: ">18",
   });
 
   expect(stdout).toMatchSnapshot();

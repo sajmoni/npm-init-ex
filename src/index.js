@@ -15,7 +15,7 @@ const packageJsonOptions = {
   bin: "dist/index.js",
   type: "module",
   engines: {
-    node: ">16",
+    node: ">18",
   },
 };
 

@@ -26,12 +26,12 @@
   "dependencies": {
     "chalk": "5.2.0",
     "execa": "7.1.1",
-    "get-bin-path": "10.0.0",
     "read-pkg": "8.0.0",
     "sort-package-json": "2.4.1",
     "write-pkg": "5.1.0"
   },
   "devDependencies": {
+    "get-bin-path": "10.0.0",
     "np": "8.0.2",
     "tempy": "3.0.0",
     "tsconfig-one": "0.0.4",

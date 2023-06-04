@@ -1,13 +1,19 @@
 import path from "node:path";
 import { readFile } from "node:fs/promises";
+
 import { expect, test } from "vitest";
 import { execa } from "execa";
 import { temporaryDirectory } from "tempy";
 import { readPackage } from "read-pkg";
+import { getBinPath } from "get-bin-path";
 
 test("npm-init-ex", async () => {
+  const binPath = await getBinPath();
+  if (!binPath) {
+    throw new Error("Bin path not found");
+  }
   const directory = temporaryDirectory({ prefix: "hello-world" });
-  const { stdout } = await execa("npm-init-ex", [], {
+  const { stdout } = await execa(binPath, [], {
     cwd: directory,
     env: {
       // @ts-expect-error

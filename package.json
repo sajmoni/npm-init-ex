@@ -19,22 +19,21 @@
     "src/"
   ],
   "scripts": {
-    "go": "preview && npm test",
     "test": "vitest",
     "release": "np --no-tests"
   },
   "dependencies": {
     "chalk": "5.2.0",
-    "execa": "6.1.0",
-    "read-pkg": "7.1.0",
-    "sort-package-json": "2.2.0",
+    "execa": "7.1.1",
+    "get-bin-path": "10.0.0",
+    "read-pkg": "8.0.0",
+    "sort-package-json": "2.4.1",
     "write-pkg": "5.1.0"
   },
   "devDependencies": {
-    "np": "7.6.3",
-    "package-preview": "4.0.0",
+    "np": "8.0.2",
     "tempy": "3.0.0",
-    "vitest": "0.28.1"
+    "vitest": "0.31.4"
   },
   "engines": {
     "node": ">=20"

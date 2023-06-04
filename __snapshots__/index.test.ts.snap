@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`npm-init-ex 1`] = `
 "
@@ -7,7 +7,7 @@ exports[`npm-init-ex 1`] = `
  [36mpackage.json[39m created
    [2mVersion:[22m [1m0.0.0[22m
    [2mLicense:[22m [1mMIT[22m
-   [2mEngine:[22m [1m>18[22m
+   [2mEngine:[22m [1m>=20[22m
    [2mDist folder:[22m [1mdist/[22m
 
  [36m.npmrc[39m created"

@@ -2,7 +2,7 @@
 
 > npm init extended - a better `npm init`
 
-```sh
+```console
 npx npm-init-ex@latest
 ```
 
@@ -15,7 +15,7 @@ npx npm-init-ex@latest
 - Sets version to `0.0.0` (Better for [`np`](https://github.com/sindresorhus/np))
 - Sets license to `MIT`
 - Adds `main`, `bin` and `files` fields (Assumes a `dist` folder)
-- Sets `node` in `engines` to `>18`
+- Sets `node` in `engines` to `>=20`
 - Adds `type: "module"`
 - Sorts the fields
 

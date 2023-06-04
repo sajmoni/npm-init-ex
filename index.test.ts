@@ -32,7 +32,7 @@ test("npm-init-ex", async () => {
   expect(packageJson.bin).toEqual("dist/index.js");
   expect(packageJson.type).toEqual("module");
   expect(packageJson.engines).toEqual({
-    node: ">18",
+    node: ">=20",
   });
 
   console.log("stdout", stdout);

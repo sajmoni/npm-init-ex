@@ -35,6 +35,7 @@ try {
     ...packageJsonOptions,
   });
 
+  // @ts-expect-error - sort-package-json doesn't return a compatible type
   await writePackage(updatedPackageJson);
   await writeFile(".npmrc", "save-exact=true");
 

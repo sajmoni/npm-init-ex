@@ -14,13 +14,14 @@
   "license": "MIT",
   "author": "sajmoni",
   "type": "module",
-  "bin": "src/index.js",
+  "bin": "dist/index.js",
   "files": [
     "src/"
   ],
   "scripts": {
-    "test": "vitest",
-    "release": "np --no-tests"
+    "build": "rm -rf dist && tsc",
+    "release": "np --no-tests",
+    "test": "npm run build && chmod +x dist/index.js && vitest"
   },
   "dependencies": {
     "chalk": "5.2.0",
@@ -33,6 +34,8 @@
   "devDependencies": {
     "np": "8.0.2",
     "tempy": "3.0.0",
+    "tsconfig-one": "0.0.4",
+    "typescript": "5.0.2",
     "vitest": "0.31.4"
   },
   "engines": {

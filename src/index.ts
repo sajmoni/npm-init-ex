@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
+import { writeFile } from "node:fs/promises";
+
 import { execa } from "execa";
 import chalk from "chalk";
 import { readPackage } from "read-pkg";
 import { writePackage } from "write-pkg";
 import sortPackageJson from "sort-package-json";
-import { writeFile } from "node:fs/promises";
 
 const packageJsonOptions = {
   version: "0.0.0",
@@ -15,7 +16,7 @@ const packageJsonOptions = {
   bin: "dist/index.js",
   type: "module",
   engines: {
-    node: ">=20",
+    node: ">=22",
   },
 };
 

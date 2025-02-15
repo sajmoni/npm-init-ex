@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 import { writeFile } from "node:fs/promises";
+import { styleText } from "node:util";
 
 import { execa } from "execa";
-import chalk from "chalk";
 import { readPackage } from "read-pkg";
 import { writePackage } from "write-pkg";
 import sortPackageJson from "sort-package-json";
@@ -18,10 +18,10 @@ const packageJsonOptions = {
   engines: {
     node: ">=22",
   },
-};
+} as const;
 
 console.log();
-console.log(chalk.blue.bold(" npm-init-ex"));
+console.log(styleText(["blue", "bold"], " npm-init-ex"));
 console.log();
 
 try {
@@ -40,22 +40,34 @@ try {
   await writePackage(updatedPackageJson);
   await writeFile(".npmrc", "save-exact=true");
 
-  console.log(` ${chalk.cyan("package.json")} created`);
+  console.log(` ${styleText("cyan", "package.json")} created`);
   console.log(
-    `   ${chalk.dim("Version:")} ${chalk.bold(packageJsonOptions.version)}`
+    `   ${styleText("dim", "Version:")} ${styleText(
+      "bold",
+      packageJsonOptions.version
+    )}`
   );
   console.log(
-    `   ${chalk.dim("License:")} ${chalk.bold(packageJsonOptions.license)}`
+    `   ${styleText("dim", "License:")} ${styleText(
+      "bold",
+      packageJsonOptions.license
+    )}`
   );
   console.log(
-    `   ${chalk.dim("Engine:")} ${chalk.bold(packageJsonOptions.engines.node)}`
+    `   ${styleText("dim", "Engine:")} ${styleText(
+      "bold",
+      packageJsonOptions.engines.node
+    )}`
   );
   console.log(
-    `   ${chalk.dim("Dist folder:")} ${chalk.bold(packageJsonOptions.files[0])}`
+    `   ${styleText("dim", "Dist folder:")} ${styleText(
+      "bold",
+      packageJsonOptions.files[0]
+    )}`
   );
 
   console.log();
-  console.log(` ${chalk.cyan(".npmrc")} created`);
+  console.log(` ${styleText("cyan", ".npmrc")} created`);
 } catch (error) {
-  console.log(chalk.red("Failed to initialize project"));
+  console.error("Failed to initialize project", error);
 }

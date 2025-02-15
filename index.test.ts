@@ -16,8 +16,7 @@ test("npm-init-ex", async () => {
   const { stdout } = await execa(binPath, [], {
     cwd: directory,
     env: {
-      // @ts-expect-error
-      FORCE_COLOR: 2,
+      FORCE_COLOR: "2",
     },
   });
 
@@ -38,7 +37,7 @@ test("npm-init-ex", async () => {
   expect(packageJson.bin).toEqual("dist/index.js");
   expect(packageJson.type).toEqual("module");
   expect(packageJson.engines).toEqual({
-    node: ">=20",
+    node: ">=22",
   });
 
   console.log("stdout", stdout);

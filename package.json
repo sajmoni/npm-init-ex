@@ -24,7 +24,6 @@
     "test": "npm run build && chmod +x dist/index.js && vitest"
   },
   "dependencies": {
-    "chalk": "5.4.1",
     "execa": "9.5.2",
     "read-pkg": "9.0.1",
     "sort-package-json": "2.14.0",

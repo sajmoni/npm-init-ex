@@ -24,19 +24,20 @@
     "test": "npm run build && chmod +x dist/index.js && vitest"
   },
   "dependencies": {
-    "chalk": "5.2.0",
-    "execa": "7.1.1",
-    "read-pkg": "8.0.0",
-    "sort-package-json": "2.4.1",
-    "write-pkg": "5.1.0"
+    "chalk": "5.4.1",
+    "execa": "9.5.2",
+    "read-pkg": "9.0.1",
+    "sort-package-json": "2.14.0",
+    "write-pkg": "7.0.0"
   },
   "devDependencies": {
-    "get-bin-path": "10.0.0",
-    "np": "8.0.2",
-    "tempy": "3.0.0",
-    "tsconfig-one": "0.0.4",
-    "typescript": "5.0.2",
-    "vitest": "0.31.4"
+    "@types/node": "22.13.4",
+    "get-bin-path": "11.0.0",
+    "np": "10.2.0",
+    "tempy": "3.1.0",
+    "tsconfig-one": "0.0.10",
+    "typescript": "5.7.3",
+    "vitest": "3.0.5"
   },
   "engines": {
     "node": ">=20"

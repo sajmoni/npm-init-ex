@@ -3,7 +3,7 @@
 import { writeFile } from 'node:fs/promises'
 import { styleText } from 'node:util'
 
-import { execa } from 'execa'
+import spawn from 'nano-spawn'
 import { readPackage } from 'read-pkg'
 import { writePackage } from 'write-pkg'
 import sortPackageJson from 'sort-package-json'
@@ -25,7 +25,7 @@ console.log(styleText(['blue', 'bold'], ' npm-init-ex'))
 console.log()
 
 try {
-  await execa('npm', ['init', '-y'])
+  await spawn('npm', ['init', '-y'])
 
   const packageJson = await readPackage({
     normalize: false,
